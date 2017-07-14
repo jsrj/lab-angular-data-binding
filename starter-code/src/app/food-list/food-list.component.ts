@@ -48,6 +48,7 @@ export class FoodListComponent implements OnInit {
   addNewFood()
   {
     this.foods.push(this.newFood);
+    this.newFood = {};
     return;
   }
 }
