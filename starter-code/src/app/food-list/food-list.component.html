@@ -1,7 +1,41 @@
+
 <div class="divider"></div>
 
+
+<!-- SEARCH AND ADD -->
+<div class="choice">
+  <button [ngStyle]="{color: searchButton}" class="choice-text" (click)="toggleSearch()">Search</button>
+<div class="or"> or </div>
+  <button [ngStyle]="{color: addButton}" class="choice-text" (click)="toggleAddForm()">Add</button>
+</div>
+<!-- SEARCH AND ADD -->
+
+<!-- ADD FORM -->
+<div [ngStyle]="{ display: addIsVisible }" class="add-form">
+
+<div class='add-form-container'>
+  <div class="labels">
+  <label class="add-form-labels" for="add-name"> Name: </label>
+  <label class="add-form-labels" for="add-calories"> Calories: </label>
+  <label class="add-form-labels" for="add-image"> Image: </label>
+  </div>
+
+  <div class="inputs">
+  <input type="number" class="add-form-inputs" id="add-calories" placeholder="50">
+  <input type="text"   class="add-form-inputs" id="add-name" placeholder="Ambrosia...">
+  <input type="text"   class="add-form-inputs" id="add-image" placeholder="http://...">
+  </div>
+</div>
+
+<div class="align-to-bottom">
+  <button class="add-to-foods-list"> Add </button>
+</div>
+
+</div>
+<!--ADD FORM -->
+
 <!-- SEARCH INTERFACE -->
-<div class="search">
+<div [ngStyle]="{ display: searchIsVisible }" class="search">
 <label for="food-search"> Search for: &nbsp; &nbsp; </label>
 <input type="text" [(ngModel)]="foodSearch" name="foodSearch" id="food-search" placeholder="Lamburger">
 </div>
@@ -21,5 +55,6 @@
 <!-- DISPLAY INTERFACE -->
 
 <div class="divider"></div>
-
-Don't see what you're looking for? Try <a href="#"> adding </a> to the list.
+<footer>
+Don't see what you're looking for? Try <button class="soft-button"> &nbsp; adding &nbsp; </button> it to the list.
+</footer>

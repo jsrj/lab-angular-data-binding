@@ -8,9 +8,39 @@ import foods from '../foods';
 })
 export class FoodListComponent implements OnInit {
   foods: Object[] = foods;
+  searchIsVisible: String = 'none';
+  addIsVisible:    String = 'none';
+  searchButton:    String = 'white';
+  addButton:       String = 'white';
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggleSearch()
+  {
+    if (this.searchIsVisible === 'none') {
+      this.searchIsVisible = 'flex';
+      this.addIsVisible    = 'none';
+      this.searchButton    = 'orange';
+      this.addButton       = 'white';
+    } else {
+      this.searchIsVisible = 'none';
+      this.searchButton    = 'white';
+    }
+  }
+
+  toggleAddForm()
+  {
+    if (this.addIsVisible === 'none') {
+      this.addIsVisible    = 'flex';
+      this.searchIsVisible = 'none';
+      this.addButton       = 'orange';
+      this.searchButton    = 'white';
+    } else {
+      this.addIsVisible    = 'none';
+      this.addButton       = 'white';
+    }
+  }
 }
