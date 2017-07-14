@@ -12,6 +12,7 @@ export class FoodListComponent implements OnInit {
   addIsVisible:    String = 'none';
   searchButton:    String = 'white';
   addButton:       String = 'white';
+  newFood:         Object =  {};
 
   constructor() { }
 
@@ -42,5 +43,11 @@ export class FoodListComponent implements OnInit {
       this.addIsVisible    = 'none';
       this.addButton       = 'white';
     }
+  }
+
+  addNewFood()
+  {
+    this.foods.push(this.newFood);
+    return;
   }
 }

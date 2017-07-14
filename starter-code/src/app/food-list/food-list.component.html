@@ -21,14 +21,17 @@
   </div>
 
   <div class="inputs">
-  <input type="number" class="add-form-inputs" id="add-calories" placeholder="50">
-  <input type="text"   class="add-form-inputs" id="add-name" placeholder="Ambrosia...">
-  <input type="text"   class="add-form-inputs" id="add-image" placeholder="http://...">
+  <input type="text"   class="add-form-inputs" id="add-name"     placeholder="Ambrosia..."
+    [(ngModel)]="newFood.name">
+  <input type="number" class="add-form-inputs" id="add-calories" placeholder="50"
+    [(ngModel)]="newFood.calories">
+  <input type="text"   class="add-form-inputs" id="add-image"    placeholder="http://..."
+    [(ngModel)]="newFood.image">
   </div>
 </div>
 
 <div class="align-to-bottom">
-  <button class="add-to-foods-list"> Add </button>
+  <button (click)="addNewFood()" class="add-to-foods-list"> Add </button>
 </div>
 
 </div>
